@@ -10,15 +10,14 @@ import 'package:provider/provider.dart';
 @RoutePage()
 class HomeView extends StatelessWidget {
   HomeView({Key? key}) : super(key: key);
-
+  late MovieProvider _movieProvider;
   late TrendingProvider _trendingProvider;
 
   @override
   Widget build(BuildContext context) {
-    final _movieProvider = context.read<MovieProvider>();
-    final trendingProvider = context.read<TrendingProvider>();
+    _movieProvider = Provider.of<MovieProvider>(context, listen: false);
     _movieProvider.loadMovies();
-    final _trendingProvider = context.read<TrendingProvider>();
+    _trendingProvider = Provider.of<TrendingProvider>(context, listen: true);
     _trendingProvider.loadMovies();
 
     Size size = MediaQuery.of(context).size;
