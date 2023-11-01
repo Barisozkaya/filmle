@@ -5,21 +5,17 @@ import 'package:filmle/ui/movie_poster.dart';
 import 'package:filmle/ui/search_view.dart';
 import 'package:filmle/viewmodel/movie_provider.dart';
 import 'package:filmle/viewmodel/search_provider.dart';
-import 'package:filmle/viewmodel/trending_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class HomeView extends StatelessWidget {
   HomeView({Key? key}) : super(key: key);
   late MovieProvider _movieProvider;
-  late TrendingProvider _trendingProvider;
 
   @override
   Widget build(BuildContext context) {
     _movieProvider = Provider.of<MovieProvider>(context, listen: false);
     _movieProvider.loadMovies();
-    _trendingProvider = Provider.of<TrendingProvider>(context, listen: true);
-    _trendingProvider.loadMovies();
 
     Size size = MediaQuery.of(context).size;
     return Scaffold(

@@ -2,7 +2,6 @@ import 'package:filmle/ui/home_view.dart';
 import 'package:filmle/ui/splash_view.dart';
 import 'package:filmle/viewmodel/movie_provider.dart';
 import 'package:filmle/viewmodel/search_provider.dart';
-import 'package:filmle/viewmodel/trending_provider.dart';
 import 'package:filmle/viewmodel/youtube_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -21,8 +20,6 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(
             create: (BuildContext context) => MovieProvider()),
-        ChangeNotifierProvider(
-            create: (BuildContext context) => TrendingProvider()),
         ChangeNotifierProvider(
             create: (BuildContext context) => SearchProvider()),
         ChangeNotifierProvider(
