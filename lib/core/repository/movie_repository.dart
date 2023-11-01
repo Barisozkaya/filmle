@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:filmle/model/movie.dart';
+import 'package:filmle/core/model/movie.dart';
 import 'package:http/http.dart' as http;
 
 class MovieRepository {

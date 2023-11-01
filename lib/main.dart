@@ -1,8 +1,8 @@
-import 'package:filmle/ui/home_view.dart';
-import 'package:filmle/ui/splash_view.dart';
-import 'package:filmle/viewmodel/movie_provider.dart';
-import 'package:filmle/viewmodel/search_provider.dart';
-import 'package:filmle/viewmodel/youtube_provider.dart';
+import 'package:filmle/app/views/home_view.dart';
+import 'package:filmle/app/views/splash_view.dart';
+import 'package:filmle/core/viewmodel/movie_provider.dart';
+import 'package:filmle/core/viewmodel/search_provider.dart';
+import 'package:filmle/core/viewmodel/youtube_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

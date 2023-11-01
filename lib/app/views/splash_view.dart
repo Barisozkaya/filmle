@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:filmle/ui/home_view.dart';
+import 'package:filmle/app/views/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 

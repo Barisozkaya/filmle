@@ -1,6 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:filmle/ui/detail_view.dart';
-import 'package:filmle/viewmodel/movie_provider.dart';
+import 'package:filmle/app/views/detail_view.dart';
+import 'package:filmle/core/viewmodel/movie_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

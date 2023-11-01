@@ -1,4 +1,4 @@
-import 'package:filmle/repository/movie_repository.dart';
+import 'package:filmle/core/repository/movie_repository.dart';
 import 'package:flutter/material.dart';
 import '../model/movie.dart';
 

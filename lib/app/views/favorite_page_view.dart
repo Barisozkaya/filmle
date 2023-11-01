@@ -1,4 +1,4 @@
-import 'package:filmle/model/movie.dart';
+import 'package:filmle/core/model/movie.dart';
 import 'package:flutter/material.dart';
 
 class FavoritePage extends StatefulWidget {

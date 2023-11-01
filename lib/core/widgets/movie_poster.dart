@@ -1,4 +1,4 @@
-import 'package:filmle/ui/detail_view.dart';
+import 'package:filmle/app/views/detail_view.dart';
 import 'package:flutter/material.dart';
 
 class MoviePoster extends StatelessWidget {

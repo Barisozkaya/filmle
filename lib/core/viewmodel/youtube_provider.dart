@@ -1,4 +1,4 @@
-import 'package:filmle/repository/youtube_video.dart';
+import 'package:filmle/core/repository/youtube_video.dart';
 import 'package:flutter/material.dart';
 import '../model/video.dart';
 

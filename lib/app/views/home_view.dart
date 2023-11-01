@@ -1,10 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:filmle/ui/careousel_slider.dart';
-import 'package:filmle/ui/loading_careousel_slider.dart';
-import 'package:filmle/ui/movie_poster.dart';
-import 'package:filmle/ui/search_view.dart';
-import 'package:filmle/viewmodel/movie_provider.dart';
-import 'package:filmle/viewmodel/search_provider.dart';
+import 'package:filmle/core/widgets/careousel_slider.dart';
+import 'package:filmle/core/widgets/loading_careousel_slider.dart';
+import 'package:filmle/core/widgets/movie_poster.dart';
+import 'package:filmle/core/widgets/search_view.dart';
+import 'package:filmle/core/viewmodel/movie_provider.dart';
+import 'package:filmle/core/viewmodel/search_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

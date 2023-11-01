@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:filmle/ui/home_view.dart';
-import 'package:filmle/ui/splash_view.dart';
+import 'package:filmle/app/views/home_view.dart';
+import 'package:filmle/app/views/splash_view.dart';
 
 part 'app_router.gr.dart';
 

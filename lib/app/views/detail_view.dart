@@ -1,7 +1,7 @@
-import 'package:filmle/model/movie.dart';
-import 'package:filmle/ui/FavoritePage.dart';
-import 'package:filmle/ui/youtube_video_player_view.dart';
-import 'package:filmle/viewmodel/youtube_provider.dart';
+import 'package:filmle/core/model/movie.dart';
+import 'package:filmle/app/views/favorite_page_view.dart';
+import 'package:filmle/app/views/youtube_video_player_view.dart';
+import 'package:filmle/core/viewmodel/youtube_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
