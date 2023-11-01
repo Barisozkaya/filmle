@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 class Movie {
   bool? adult;
   String? backdropPath;
@@ -13,22 +14,24 @@ class Movie {
   bool? video;
   double? voteAverage;
   int? voteCount;
-
-  Movie(
-      {this.adult,
-      this.backdropPath,
-      this.genreIds,
-      this.id,
-      this.originalLanguage,
-      this.originalTitle,
-      this.overview,
-      this.popularity,
-      this.posterPath,
-      this.releaseDate,
-      this.title,
-      this.video,
-      this.voteAverage,
-      this.voteCount});
+  String? posterImageurl;
+  Movie({
+    this.adult,
+    this.backdropPath,
+    this.genreIds,
+    this.id,
+    this.originalLanguage,
+    this.originalTitle,
+    this.overview,
+    this.popularity,
+    this.posterPath,
+    this.releaseDate,
+    this.title,
+    this.video,
+    this.voteAverage,
+    this.voteCount,
+    this.posterImageurl,
+  });
 
   Movie.fromJson(Map<String, dynamic> json) {
     adult = json['adult'];

@@ -1,4 +1,5 @@
 import 'package:filmle/ui/home_view.dart';
+import 'package:filmle/ui/splash_view.dart';
 import 'package:filmle/viewmodel/movie_provider.dart';
 import 'package:filmle/viewmodel/search_provider.dart';
 import 'package:filmle/viewmodel/trending_provider.dart';
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
               brightness: Brightness.dark,
             ),
           ),
-          home: HomeView()),
+          home: SplashView()),
     );
   }
 }

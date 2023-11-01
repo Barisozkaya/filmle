@@ -1,4 +1,6 @@
 import 'package:filmle/model/movie.dart';
+import 'package:filmle/ui/FavoritePage.dart';
+import 'package:filmle/ui/youtube_video_player_view.dart';
 import 'package:filmle/viewmodel/youtube_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -25,22 +27,11 @@ class DetailPage extends StatelessWidget {
       key = _youtubeVideoProvider.video!.results![0].key;
     }
 
-    Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: SafeArea(
         child: Column(
           children: [
-            key != null &&
-                    movie.id.toString() ==
-                        _youtubeVideoProvider.video!.id.toString()
-                ? YoutubeVideoPlayer(
-                    videoKey: key,
-                  )
-                : const Center(
-                    child: CircularProgressIndicator(),
-                  ),
             Expanded(
-              flex: 1,
               child: SingleChildScrollView(
                 scrollDirection: Axis.vertical,
                 physics: const BouncingScrollPhysics(),
@@ -51,37 +42,65 @@ class DetailPage extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
+                          IconButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            icon: Icon(
+                              Icons.arrow_back,
+                              color: Colors.white,
+                            ),
+                          ),
                           Padding(
                             padding: const EdgeInsets.all(10.0),
-                            child: SizedBox(
-                              width: size.width * 0.6,
-                              child: Text(
-                                movie.title.toString(),
-                                style: const TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                            child: Text(
+                              movie.title.toString(),
+                              style: const TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
                               ),
                             ),
                           ),
-                          const Row(
+                          Row(
                             children: [
                               IconButton(
-                                  onPressed: null,
-                                  icon: Icon(
-                                    Icons.share,
-                                    color: Colors.white,
-                                  )),
+                                onPressed: null,
+                                icon: Icon(
+                                  Icons.share,
+                                  color: Colors.white,
+                                ),
+                              ),
                               IconButton(
-                                  onPressed: null,
-                                  icon: Icon(
-                                    Icons.favorite_border,
-                                    color: Colors.white,
-                                  )),
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          FavoritePage(movie: movie),
+                                    ),
+                                  );
+                                },
+                                icon: Icon(
+                                  Icons.favorite_border,
+                                  color: Colors.white,
+                                ),
+                              ),
                             ],
                           ),
                         ],
                       ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: key != null &&
+                              movie.id.toString() ==
+                                  _youtubeVideoProvider.video!.id.toString()
+                          ? YoutubeVideoPlayer(
+                              videoKey: key,
+                            )
+                          : const Center(
+                              child: CircularProgressIndicator(),
+                            ),
                     ),
                     const Divider(
                       height: 1,
@@ -102,54 +121,9 @@ class DetailPage extends StatelessWidget {
                   ],
                 ),
               ),
-            )
+            ),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class YoutubeVideoPlayer extends StatefulWidget {
-  YoutubeVideoPlayer({required this.videoKey, super.key});
-  late String videoKey;
-
-  @override
-  State<YoutubeVideoPlayer> createState() => _YoutubeVideoPlayerState();
-}
-
-class _YoutubeVideoPlayerState extends State<YoutubeVideoPlayer> {
-  late YoutubePlayerController _controller;
-
-  @override
-  void initState() {
-    _controller = YoutubePlayerController(
-      initialVideoId: widget.videoKey,
-      flags: const YoutubePlayerFlags(
-        mute: false,
-        autoPlay: true,
-        disableDragSeek: false,
-        loop: false,
-        isLive: false,
-        forceHD: false,
-        enableCaption: true,
-      ),
-    );
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: 16 / 9,
-      child: YoutubePlayer(
-        controller: _controller,
       ),
     );
   }
