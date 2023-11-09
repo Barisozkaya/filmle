@@ -1,15 +1,32 @@
+import 'package:filmle/core/style/colors.dart';
 import 'package:flutter/material.dart';
 
-class HomeView extends StatefulWidget {
-  const HomeView({super.key});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
 
   @override
-  State<HomeView> createState() => _HomeViewState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeViewState extends State<HomeView> {
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.blue,
+        elevation: 0,
+        centerTitle: true,
+        title: const Text(
+          "Fılmle",
+          style: TextStyle(color: black),
+        ),
+      ),
+      body: ListView(
+        children: const [
+          Genres(),
+          BestMovies(),
+        ],
+      ),
+    );
   }
 }
