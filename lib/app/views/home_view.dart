@@ -1,14 +1,18 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:filmle/core/style/colors.dart';
+import 'package:filmle/core/widgets/genres.dart';
+import 'package:filmle/core/widgets/populer_movies.dart';
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+@RoutePage()
+class HomeView extends StatefulWidget {
+  const HomeView({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<HomeView> createState() => _HomeViewState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
