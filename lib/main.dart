@@ -1,10 +1,5 @@
-import 'package:filmle/app/views/home_view.dart';
-import 'package:filmle/app/views/splash_view.dart';
-import 'package:filmle/core/viewmodel/movie_provider.dart';
-import 'package:filmle/core/viewmodel/search_provider.dart';
-import 'package:filmle/core/viewmodel/youtube_provider.dart';
+import 'package:filmle/app/router/app_router.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,29 +7,18 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-  static const seedColor = Color(0xffC0392B);
 
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(
-            create: (BuildContext context) => MovieProvider()),
-        ChangeNotifierProvider(
-            create: (BuildContext context) => SearchProvider()),
-        ChangeNotifierProvider(
-            create: (BuildContext context) => YoutubeVideoProvider()),
-      ],
-      child: MaterialApp(
-          title: 'Flutter Demo',
-          debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-            colorScheme: ColorScheme.fromSeed(
-              seedColor: seedColor,
-              brightness: Brightness.dark,
-            ),
-          ),
-          home: SplashView()),
+    final appRouter = AppRouter();
+    return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
+      routerConfig: appRouter.config(),
+      title: 'Movie Flutter',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
     );
   }
 }
