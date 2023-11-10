@@ -1,4 +1,6 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:filmle/app/views/bloc/get_movies_by_genre_bloc.dart';
+import 'package:filmle/app/views/details_view.dart';
 import 'package:filmle/core/style/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
@@ -100,16 +102,13 @@ class _GenreMoviesState extends State<GenreMovies> {
               padding:
                   const EdgeInsets.only(top: 10.0, bottom: 10.0, left: 14.0),
               child: GestureDetector(
-                /*
                 onTap: () {
-                 
                   Navigator.push(
                       context,
                       MaterialPageRoute(
                           builder: (context) =>
                               DetailScreen(movie: movies[index])));
                 },
-                */
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
