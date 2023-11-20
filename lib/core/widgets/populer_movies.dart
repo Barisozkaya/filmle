@@ -1,6 +1,4 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:filmle/app/views/bloc/get_movies_bloc.dart';
-import 'package:filmle/app/router/app_router.dart';
 import 'package:filmle/app/views/details_view.dart';
 import 'package:filmle/core/model/movie.dart';
 import 'package:filmle/core/model/movie_response.dart';

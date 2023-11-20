@@ -1,4 +1,3 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:filmle/app/views/bloc/get_movies_by_genre_bloc.dart';
 import 'package:filmle/app/views/details_view.dart';
 import 'package:filmle/core/style/colors.dart';
